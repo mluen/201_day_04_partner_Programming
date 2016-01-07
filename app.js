@@ -1,10 +1,3 @@
-
-var res1 = document.getElementById('resultOne');
-var res2 = document.getElementById('resultTwo');
-var res3 = document.getElementById('resultThree');
-var res4 = document.getElementById('resultFour');
-var res5 = document.getElementById('resultFive');
-
 var user = prompt('Welcome, please enter a name: ');
 console.log('User name input:  ' + user);
 alert('Welcome ' + user);
@@ -17,11 +10,9 @@ var answer1 = prompt('Question 1:  True or False, Ben was born in Seattle, Washi
 console.log('User response to Question 1:  ' + answer1);
 counterTotal++;
 if (answer1.toLowerCase() == 'false') {
-  res1.textContent = 'Correct, ' + user + '!  Ben was born in Tucson, Arizona.';
   alert('Correct, ' + user + '!  Ben was born in Tucson, Arizona.');
   counterCorrect++;
 } else {
-  res1.textContent = 'Sorry ' + user + ',  Ben was not born in Seattle.';
   alert('Sorry ' + user + ',  Ben was not born in Seattle.');
 }
 
