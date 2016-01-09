@@ -16,53 +16,57 @@ var user = prompt('Welcome, please enter a name: ');
 console.log('User name input:  ' + user);
 alert('Welcome ' + user);
 
-questionOne();
-questionTwo();
-questionThree();
+var question1 = [
+  'Question 1:  True or False, Ben was born in Seattle, Washington?',
+  '',
+  right1 = [false],
+  wrong1 = [true],
+  'Correct, ' + user + '!  Ben was born in Tucson, Arizona.',
+  'Sorry ' + user + ',  Ben was not born in Seattle.',
+  res1
+];
+
+var question2 = [
+  'Question 2:  Does Ben like food? (Enter "Y" or "N")',
+  '',
+  right2 = ['y', 'yes'],
+  wrong2 = ['n', 'no'],
+  'Correct, ' + user + '!  Ben does indeed like food.',
+  'Sorry ' + user + ', Ben actually does like food.',
+  res2
+];
+var question3 = [
+    'Question 3:  What was Ben\'s first Pet? (Enter "Dog", "Cat", "Bird", "Fish", "Velociraptor")',
+    '',
+    right3 = ['fish'],
+    wrong3 = ['dog', 'cat', 'bird', 'velociraptor'],
+    'Correct, ' + user + '!  Ben\'s first pet was a fish.',
+    'Sorry ' + user + ' his parents wouldn\'t allow something like that.',
+    res3
+  ];
+
+  var questionData = [question1, question2, question3];
+
+
+for (i = 0; i < questionData.length; i++) {
+
+  questionData[i][1] = prompt(questionData[i][0]).toLowerCase();
+  console.log('User response to Question 1:  ' + questionData[i][1]);
+  counterTotal++;
+  console.log(counterTotal);
+  if ((questionData[i][1] === questionData[i][2][0]) || (questionData[i][1] === questionData[i][2][1])) {
+    questionData[i][6].textContent = questionData[i][4];
+    counterCorrect++;
+    questionData[i][6].className = 'correct';
+  } else {
+    questionData[i][6].textContent = questionData[i][5];
+    questionData[i][6].className = 'incorrect';
+  }
+}
+
 questionFour();
 questionFive();
 questionSix();
-
-
-function questionOne() {
-  var answer1 = prompt('Question 1:  True or False, Ben was born in Seattle, Washington?').toLowerCase();
-  console.log('User response to Question 1:  ' + answer1);
-  counterTotal++;
-  if (answer1 == 'false') {
-    res1.textContent = 'Correct, ' + user + '!  Ben was born in Tucson, Arizona.';
-    counterCorrect++;
-  } else {
-    res1.textContent = 'Sorry ' + user + ',  Ben was not born in Seattle.';
-  }
-}
-
-
-function questionTwo() {
-  // accept Y/y/Yes/yes as valid input
-  var answer2 = prompt('Question 2:  Does Ben like food? (Enter "Y" or "N")').toLowerCase();
-  console.log('User response to Question 2:  ' + answer2);
-  counterTotal++;
-  if ((answer2 === "y") || (answer2 === "yes")) {
-    res2.textContent = 'Correct, ' + user + '!  Ben does indeed like food.';
-    counterCorrect++;
-  } else {
-    res2.textContent = 'Sorry ' + user + ', Ben actually does like food.';
-  }
-}
-
-
-function questionThree() {
-  var answer3 = prompt('Question 3:  What was Ben\'s first Pet? (Enter "Dog", "Cat", "Bird", "Fish", "Velociraptor")').toLowerCase()
-  console.log('User resonse to Question 3:  ' + answer3);
-  counterTotal++;
-  if (answer3 == "fish") {
-    res3.textContent = 'Correct, ' + user + '!  Ben\'s first pet was a fish.';
-    counterCorrect++;
-  } else {
-    res3.textContent = 'Sorry ' + user + ', as much as Ben wanted a ' + answer3 + ' his parents wouldn\'t allow something like that.';
-  }
-}
-
 
 function questionFour() {
   var answer4 = prompt('Question 4:  Pick a number between 1 and 10:');

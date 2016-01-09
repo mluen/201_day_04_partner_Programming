@@ -29,6 +29,14 @@ Changelog: 01/06/2016
   * create input validation for Question 3 input
 
 Changelog:  01/07/2016
-  * Peer progrmaming changes added
+  * Peer programing changes added
   * Question six added
   * README updated
+
+Changelog:  01/08/2016  
+  * Driver and Navigators: Ben and Margaux (code was worked on together)
+  * Cleaned up code using DRY principle
+  * Color coded answers on screen
+  * Additional functionality was added to questions
+  * Added links to each others game in index.html
+  * Hosted game online so anyone can play
